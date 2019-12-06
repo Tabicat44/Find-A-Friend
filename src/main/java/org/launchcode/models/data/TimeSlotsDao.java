@@ -1,7 +1,7 @@
 package org.launchcode.models.data;
 
 
-import org.launchcode.models.forms.TimeSlots;
+import org.launchcode.models.TimeSlots;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

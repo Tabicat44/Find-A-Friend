@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<!--<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>-->
+
+<head th:replace="fragments :: head"></head>
+<body>
+
+<header th:replace="fragments :: header"></header>
+<nav>
+    <p><a href="hiThere">Home</a></p>
+</nav>
+
+<h1>What type of organization are you?</h1>
+<form method="post" style="max-width:600px;" th:object="${inquiry1}">
+    <div class="form-group">
+        <label th:for="Answer1">Answer:</label>
+        <input class="form-control" th:field="*{theAnswer1}">
+        <span th:errors="*{theAnswer1}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Answer">
+</form>
+
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
+
+
+
+<!--
+<form method="post" style="max-width:600px;" th:object="${category}">
+    <div class="form-group">
+        <label th:for="name">Name</label>
+        <input class="form-control" th:field="*{name}"/>
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Category" />
+
+</form>-->

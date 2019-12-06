@@ -1,4 +1,4 @@
-package org.launchcode.models.forms;
+package org.launchcode.models;
 
 
 import javax.persistence.Entity;

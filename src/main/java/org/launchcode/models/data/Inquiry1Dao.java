@@ -1,15 +1,13 @@
 package org.launchcode.models.data;
 
 
-import org.launchcode.models.SeniorProperties;
+import org.launchcode.models.Inquiry1;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import javax.transaction.Transactional;
-
 
 @Repository
 @Transactional
-public interface SeniorPropertiesDao extends CrudRepository<SeniorProperties, Integer> {
+public interface Inquiry1Dao extends CrudRepository<Inquiry1, Integer> {
 
 }

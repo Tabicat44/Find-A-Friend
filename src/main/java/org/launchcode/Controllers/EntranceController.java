@@ -10,21 +10,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="")
 public class EntranceController {
 
-    @RequestMapping(value="")
+    @RequestMapping(value="hiThere")
     public String entrance(Model model){ return "welcoming/entrance"; }
 
     @RequestMapping(value="option1")
-    public String pick1Seniors(Model model){
-        return "welcoming/seniors/option2";
-    }
+    public String pick1Seniors(Model model){ return "welcoming/seniors/option2";}
 
     @RequestMapping(value="option2")
-    public String pick1Volunteers(Model model){
-        return "welcoming/volunteers/option2";
-    }
+    public String pick1Volunteers(Model model){ return "welcoming/volunteers/option2"; }
 
-    @RequestMapping(value="seniorsRegisterLink")
-    public String seniorsRegister(Model model){ return "welcoming/seniors/register"; }
+    // I don't need this code b/c I have the call to return the page
+    //in the SeniorsPropertiesController file
+/*    @RequestMapping(value="seniorsRegisterLink")
+    public String seniorsRegister(Model model){ return "welcoming/seniors/register"; }*/
 
     @RequestMapping(value="seniorsLogin")
     public String seniorsLogin(Model model){ return "welcoming/seniors/login"; }

@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<!--<head>
+<head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-
-</head>-->
-
-<head th:replace="fragments :: head"></head>
-
+</head>
+<!--<head th:repalce="fragments :: head"></head>-->
 <body>
 <header th:replace="fragments :: header"></header>
-<nav></nav>
-<p><a href="hiThere">Home</a></p> |
-<p><a href="register">I'm New!</a></p> |
-<p><a href="seniorsLogin">I've Been Here Before</a></p>
+
+<nav>
+    <p><a href="hiThere">Home</a></p>
 </nav>
 
+<p>Test Text; Thanks for adding a new answer</p>
 <footer th:replace="fragments :: footer"></footer>
 </body>
 </html>

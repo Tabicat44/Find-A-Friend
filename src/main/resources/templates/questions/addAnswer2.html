@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<!--<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>-->
+
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<nav>
+    <p><a href="hiThere">Home</a></p>
+</nav>
+
+<h1>Where did you hear about us?</h1>
+<form method="post" style="max-width:600px;" th:object="${inquiry2}">
+    <div class="form-group">
+        <label th:for="Answer2">Answer:</label>
+        <input class="form-control" th:field="*{theAnswer2}">
+        <span th:errors="*{theAnswer2}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Answer">
+</form>
+
+
+<footer th:replace="fragments :: footer"></footer>
+
+</body>
+</html>

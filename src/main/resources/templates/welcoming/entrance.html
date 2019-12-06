@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<!--<head>
     <meta charset="UTF-8"/>
     <title>Welcome</title>
-</head>
+</head>-->
+
+<head th:replace="fragments :: head"></head>
 <body class="container">
 
-<p><a href="option1">Senior Representative</a></p>
-<p><a href="option2">Volunteer</a></p>
+<header th:replace="fragments :: header"></header>
+<!--<p><a href="">Home</a></p>-->
+<nav class="navBar">
+    <a href="option1">Senior Representative</a>
+    <a href="option2">Volunteer</a>
+    <a href="addAnswer1">Add Answers to Inquiry1</a>
+    <a href="addAnswer2">Add Answers to Inquiry2</a>
 
+</nav>
 <!--<p><a th:href="@{/welcoming/seniors/option2}">Senior Representative</a></p>
 <p><a th:href="@{/welcoming/volunteers/option2}">Volunteer</a></p>-->
 
+<footer th:replace="fragments :: footer"></footer>
 </body>
 </html>
 

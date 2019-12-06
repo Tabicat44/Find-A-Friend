@@ -1,0 +1,1 @@
+create table theTest(id int identity primary key, hobby varchar(30));
