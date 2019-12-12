@@ -32,13 +32,13 @@ public class theComboForm {
 
     public void setInquiry1s(Iterable<Inquiry1> inquiry1s) { this.inquiry1s = inquiry1s; }
 
-    public Iterable getInquiry1s() { return inquiry1s; }
+    public Iterable<Inquiry1> getInquiry1s() { return inquiry1s; }
 
     public int getInquiry1Id() { return getInquiry1Id(); }
 
     public void setInquiry2s(Iterable<Inquiry2> inquiry2s) { this.inquiry2s = inquiry2s; }
 
-    public Iterable getInquiry2s() { return inquiry2s; }
+    public Iterable<Inquiry2> getInquiry2s() { return inquiry2s; }
 
     public Iterable getInquiry2Id() { return getInquiry2Id(); }
 

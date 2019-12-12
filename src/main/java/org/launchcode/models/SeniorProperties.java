@@ -3,14 +3,17 @@ package org.launchcode.models;
 
 import org.launchcode.models.Inquiry1;
 import org.launchcode.models.Inquiry2;
+import org.launchcode.models.data.Inquiry1Dao;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 public class SeniorProperties {
@@ -23,17 +26,44 @@ public class SeniorProperties {
 //    @JoinColumn(name = "category_id")
 //    private List<Cheese> cheeses = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "seniorProperties")
+/*
+    @OneToMany(mappedBy = "seniorProperties")
     private List<Inquiry1> inquiry1s = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "seniorProperties")
+    @OneToMany(mappedBy = "seniorProperties")
     private List<Inquiry2> inquiry2s = new ArrayList<>();
+*/
+/*
+    @OneToMany
+    @JoinColumn(name= "seniorProperties_id")
+    private List<Inquiry1> inquiry1s = new ArrayList<>();
+
+    @OneToMany
+    @JoinColumn(name= "seniorProperties_id")
+    private List<Inquiry2> inquiry2s = new ArrayList<>();*/
+
+/*    @OneToOne
+    @JoinColumn(name= "Inquiry1Id")
+    private List<Inquiry1> inquiry1s = new ArrayList<>();
+
+    @OneToMany
+    @JoinColumn(name= "Inquiry2Id")
+    private List<Inquiry2> inquiry2s = new ArrayList<>();*/
+
+
+    @ManyToOne
+    private Inquiry1 inquiry1;
+
+    @ManyToOne
+    private Inquiry2 inquiry2;
+
 
     @NotBlank
     @Size(min=2, max=60)
     private String companyName;
 
-    @Email(message = "Invalid email address")
+    @Email
+    @Size(message = "Invalid email address")
     private String email;
 
     @NotBlank
@@ -78,6 +108,7 @@ public class SeniorProperties {
         pickedAnswer2 = thePickedAnswer2;*/
     }
 
+    public int getSeniorPropertiesId() { return seniorPropertiesId; }
 
     public String getCompanyName() { return companyName; }
 
@@ -106,9 +137,9 @@ public class SeniorProperties {
     }
 
     private void checkPassword() {
-        if (password != null && verifyPassword != null
+        if (password != "{null}" && verifyPassword != "{null}"
                 && !password.equals(verifyPassword)) {
-            verifyPassword = null;
+            verifyPassword = "{null}";
         }
     }
 
@@ -119,6 +150,22 @@ public class SeniorProperties {
     public String getZipCode()  { return zipCode; }
 
     public void setZipCode(String providedZipCode) { zipCode = providedZipCode; }
+
+/*
+    public void setVerifyPassword(String verifyPassword) {
+        this.verifyPassword = verifyPassword;
+        checkPassword();
+    }
+
+    private void checkPassword() {
+        if (password != null && verifyPassword != null
+                && !password.equals(verifyPassword)) {
+            verifyPassword = null;
+        }
+    }
+*/
+
+
 
 //    public String getPickedAnswer1() { return pickedAnswer1; }
 //

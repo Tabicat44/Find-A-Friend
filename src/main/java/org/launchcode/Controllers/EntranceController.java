@@ -1,5 +1,6 @@
 package org.launchcode.Controllers;
 
+import org.launchcode.models.SeniorProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +25,17 @@ public class EntranceController {
 /*    @RequestMapping(value="seniorsRegisterLink")
     public String seniorsRegister(Model model){ return "welcoming/seniors/register"; }*/
 
-    @RequestMapping(value="seniorsLogin")
-    public String seniorsLogin(Model model){ return "welcoming/seniors/login"; }
+/*    @RequestMapping(value="seniorsLogin")
+    public String seniorsLogin(Model model){ return "welcoming/seniors/login"; }*/
+
+
+    @RequestMapping("login")
+    public String loggingIn(Model model){
+        model.addAttribute("SenProperty", new SeniorProperties());
+
+        return ("welcoming/login");
+
+    }
 }
 
 /*

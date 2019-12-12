@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+
+<header th:replace="fragments :: header"></header>
+<!--<title th:replace="fragments :: title"></title>-->
+<!--<title>Title</title>-->
+<div class="container">
+<nav>
+    <p><a href="hiThere">Home</a></p>
+</nav>
+
+<form method="POST">  <!--th:action="@{login}"-->
+    <label for="username">Username</label>;
+    <input type="text" id="username" name="username" autofocus="autofocus"> <br />
+    <label for="password">Password</label>;
+    <input type="password" id="password" name="password" /> <br />
+    <input type="submit" value="Log in" />
+</form>
+
+
+<footer th:replace="fragments :: footer"></footer>
+
+</div>
+
+</body>
+</html>

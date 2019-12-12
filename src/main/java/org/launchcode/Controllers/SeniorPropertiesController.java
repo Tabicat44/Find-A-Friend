@@ -5,14 +5,16 @@ import org.launchcode.models.data.Inquiry2Dao;
 import org.launchcode.models.data.SeniorPropertiesDao;
 import org.launchcode.models.SeniorProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+/*import org.springframework.context.annotation.Bean;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;*/
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 
 @Controller
 @RequestMapping(value="register")
@@ -29,7 +31,7 @@ public class SeniorPropertiesController {
 
 
     //This is the form for Senior Citizen companies to register
-    @RequestMapping(value="", method = RequestMethod.GET)
+    @GetMapping("")
     public String getRegistrationInfo(Model model){
         model.addAttribute("title", "Let's Get You an Account");
         SeniorProperties newSeniorProperty = new SeniorProperties();
@@ -44,19 +46,29 @@ public class SeniorPropertiesController {
 
     }
 
-    @RequestMapping(value="", method = RequestMethod.POST)
+    @PostMapping("")
     public String letsPostRegistration(@ModelAttribute @Valid SeniorProperties seniorProperties,
-                                       Errors errors, Model model) {
+                                       Errors errors, Model model /*BindingResult bindingResult,
+                                       @RequestParam String companyName,
+                                       @RequestParam Email email,
+                                       @RequestParam String userName*/) {
 
 //        model.addAttribute(newSeniorProperty);
         boolean passwordsMatch = true;
 //        if (theSeniorProperties.getPassword() == "" || theSeniorProperties.getVerifyPassword() == ""
-//                || theSeniorProperties.getCompanyName() == ""
+//                || theSeniorProperties.getCompanyName() == "{null}"
 //                || theSeniorProperties.getAddress() == ""
 //                || theSeniorProperties.getEmail() == ""
 //                || theSeniorProperties.getUsername() == ""
 //                || theSeniorProperties.getZipCode() == ""
 //                || !theSeniorProperties.getPassword().equals(verify)) {
+
+//        if (seniorProperties.isUserAlreadyPresent(seniorProperties))
+
+/*        if (seniorProperties.isUserAlreadyPresent(seniorProperties) == true) {
+            model.addAttribute( "duplicateEmailError", "This email is already registered with an account");
+        }*/
+
         if (errors.hasErrors()){
             passwordsMatch = false;
             seniorProperties.setPassword("");
@@ -85,5 +97,14 @@ public class SeniorPropertiesController {
 
         /*Inquiries newInquiry = InquiryDao.findById(InquiryId).get();*/
 
+
 }
+
+
+
+/*
+    ArrayList<Job> jobs = jobData.findByColumnAndValue(column, name);
+
+        model.addAttribute("title", "Jobs with " + column.getName() + ": " + name);
+                model.addAttribute("jobs", jobs);*/
 

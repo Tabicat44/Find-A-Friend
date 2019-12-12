@@ -13,7 +13,9 @@ public class TimeSlots {
     @GeneratedValue
     private int id;
 
-    public TimeSlots () {
+    public TimeSlots () { }
 
-    }
+
+
+
 }

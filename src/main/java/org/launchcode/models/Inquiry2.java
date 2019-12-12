@@ -1,12 +1,10 @@
 package org.launchcode.models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,10 +12,21 @@ public class Inquiry2 {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int inquiry2Id;
 
-    @ManyToMany
-    private List<SeniorProperties> seniorProperties;
+/*    @ManyToMany
+    @JoinColumn(name = "SeniorProperties_id")
+    private List<SeniorProperties> seniorProperties;*/
+
+/*    @ManyToOne
+    private SeniorProperties seniorProperties;*/
+/*
+    @ManyToOne
+    private SeniorProperties seniorProperties;*/
+
+    @OneToMany
+    @JoinColumn(name= "inquiry2Id")
+    private List<SeniorProperties> seniorProperties = new ArrayList<>();
 
     @NotBlank
     @Size(min=2, max=45)
@@ -25,8 +34,16 @@ public class Inquiry2 {
 
     public Inquiry2() { }
 
+/*    public SeniorProperties seniorProperties() { return seniorProperties; }
 
-    public int getId() { return id; }
+    public void setSeniorProperties(SeniorProperties seniorProperties) { this.seniorProperties = seniorProperties; }*/
+
+
+    public List<SeniorProperties> getTheSeniorProperties() { return seniorProperties; }
+
+    public void setTheSeniorProperties(List<SeniorProperties> theSeniorProperties) { this.seniorProperties = theSeniorProperties; }
+
+    public int getInquiry2Id() { return inquiry2Id; }
 
     public String getTheAnswer2() { return theAnswer2; }
 
