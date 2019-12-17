@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<!--<header th:replace="fragments :: header"></header>-->
+<!--<title th:replace="fragments :: title"></title>-->
+<!--<title>Title</title>
+<title th:text="${{title}}"></title>-->
+<nav>
+    <p><a href="hiThere">Home</a></p>
+</nav>
+
+<form method="post" th:object="${thoseTimeSlotsTho}" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="TimeSlotDate">Date</label>
+        <input type="date" id="start_date" th:field="*{date}">
+    </div>
+    <div class="form-group">
+        <label th:for="TimeSlotTime">Time</label>
+        <input type="time" id="start_time" th:field="*{time}">
+    </div>
+
+    <input type="submit" value="Schedule Time Slot">
+
+</form>
+
+<footer th:replace="fragments :: footer"></footer>
+
+</body>
+</html>
