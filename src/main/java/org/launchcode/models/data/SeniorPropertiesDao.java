@@ -16,5 +16,5 @@ public interface SeniorPropertiesDao extends CrudRepository<SeniorProperties, In
 
     SeniorProperties findByCompanyName(String companyName);
     SeniorProperties findByEmail(String email);
-
+    SeniorProperties findByUsername(String username);
 }

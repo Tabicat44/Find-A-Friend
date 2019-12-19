@@ -41,6 +41,7 @@ public class TimeSlotsController {
 //        model.addAttribute("title", "Schedule Appointment Times");
 //        TimeSlots timeSlots = new TimeSlots();
 //        model.addAttribute("puppy", timeSlots);
+        model.addAttribute("title", "Please choose a time and date:");
         model.addAttribute("thoseTimeSlotsTho", new TimeSlots());
 
         return "times/add";
@@ -49,10 +50,10 @@ public class TimeSlotsController {
 
     //Collects information from form that adds time slots
     @PostMapping("addTimeSlots")
-    public String getThoseTimes(@ModelAttribute @Valid TimeSlots newTimeSlots){
+    public String getThoseTimes(Model model, @ModelAttribute @Valid TimeSlots newTimeSlots){
 
         timeSlotsDao.save(newTimeSlots);
-        return "times/index";
+        return "redirect:timeSlots";
 
     }
 

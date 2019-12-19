@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<!--<head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-</head>
+</head>-->
+<head th:replace="fragments :: head"></head>
 <body>
+<header th:replace="fragments :: header"></header>
 <nav>
     <p><a href="hiThere">Home</a></p>
 </nav>
 <h1>Welcome!  Thank you for joining!</h1>
-<a href="TimeSlots">Let's Add Times!</a>
+<a href="timeSlots">Let's Add Times!</a>
+<footer th:replace="fragments :: footer"></footer>
 
 </body>
 </html>

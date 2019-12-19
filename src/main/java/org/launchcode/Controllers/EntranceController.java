@@ -29,13 +29,13 @@ public class EntranceController {
     public String seniorsLogin(Model model){ return "welcoming/seniors/login"; }*/
 
 
-    @RequestMapping("login")
+/*    @RequestMapping("login")
     public String loggingIn(Model model){
-        model.addAttribute("SenProperty", new SeniorProperties());
+        model.addAttribute(new SeniorProperties());
 
         return ("welcoming/login");
 
-    }
+    }*/
 }
 
 /*

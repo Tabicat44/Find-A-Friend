@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<!--<head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-</head>
+</head>-->
+<head th:replace="fragments :: head"></head>
 <body>
 
 
@@ -12,14 +13,16 @@
 <!--<title>Title</title>-->
 <div class="container">
 <nav>
-    <p><a href="hiThere">Home</a></p>
+    <p><a href="/hiThere">Home</a></p>
 </nav>
 
-<form method="POST">  <!--th:action="@{login}"-->
-    <label for="username">Username</label>;
-    <input type="text" id="username" name="username" autofocus="autofocus"> <br />
-    <label for="password">Password</label>;
-    <input type="password" id="password" name="password" /> <br />
+    <h1 th:text="${title}">Default Title</h1>
+
+<form class="letsGetAligned" method="POST" th:object="${seniorProperties}">  <!--th:action="@{login}"-->
+    <label th:for="username">Username</label>;
+    <input type="text" th:field="*{username}" autofocus="autofocus" /> <br />
+    <label th:for="password">Password</label>;
+    <input type="password" th:field="*{password}" /> <br />
     <input type="submit" value="Log in" />
 </form>
 

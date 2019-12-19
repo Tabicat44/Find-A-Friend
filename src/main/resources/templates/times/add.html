@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<!--<head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-</head>
+</head>-->
+<head th:replace="fragments :: head"></head>
 <body>
 
+<header th:replace="fragments :: header"></header>
+<!--<title>title</title>-->
 <!--<header th:replace="fragments :: header"></header>-->
 <!--<title th:replace="fragments :: title"></title>-->
 <!--<title>Title</title>
 <title th:text="${{title}}"></title>-->
 <nav>
     <p><a href="hiThere">Home</a></p>
+    <p><a href="timeSlots">Let's Add Times!</a></p>
 </nav>
 
-<form method="post" th:object="${thoseTimeSlotsTho}" style="max-width:600px;">
+<h1 th:text="${title}">Default Title</h1>
+<form class="letsGetAligned" method="post" th:object="${thoseTimeSlotsTho}" style="max-width:600px;">
     <div class="form-group">
         <label th:for="TimeSlotDate">Date</label>
         <input type="date" id="start_date" th:field="*{date}">
@@ -24,7 +29,7 @@
         <input type="time" id="start_time" th:field="*{time}">
     </div>
 
-    <input type="submit" value="Schedule Time Slot">
+    <input type="submit" value="Schedule Time Slot" id="bottomButton">
 
 </form>
 

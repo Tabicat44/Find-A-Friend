@@ -17,7 +17,8 @@
     <p><a href="hiThere">Home</a></p>
 </nav>
 
-<form method="post" th:object="${seniorProperty}" style="max-width:600px;">
+<h1>Let's Get Registered!</h1>
+<form class="letsGetAligned" method="post" th:object="${seniorProperty}" style="max-width:600px;">
     <div class="form-group">
         <label th:for="companyName">Company Name</label>
         <input class="form-control" th:field="*{companyName}" />
@@ -41,7 +42,7 @@
         </div>
     <div class="form-group">
         <label th:for="verify">Verify</label>
-        <input class="form-control" name="verify" id="verify" type="password" th:field="*{password}"/>
+        <input class="form-control" th:field="*{verifyPassword}"/>
         <div class="error" th:text="${verifyError}"></div>
     </div>
     <div class="form-group">
@@ -56,7 +57,7 @@
     </div>
     <div class="form-group">
         <label th:for="Question1">What type of business or organization are you?</label>
-        <select name="inquiryId">
+        <select name="inquiry1Id">
             <option th:each="inquiry : ${Question1}"
                     th:text="${inquiry.theAnswer1}"
                     th:value="${inquiry.inquiry1Id}"></option>
@@ -65,12 +66,13 @@
     </div>
     <div class="form-group">
         <label th:for="Question2">Where did you hear about us?</label>
-        <select name="inquiryId">
+        <select name="inquiry2Id">
             <option th:each="inquiry : ${Question2}"
                     th:text="${inquiry.theAnswer2}"
                     th:value="${inquiry.inquiry2Id}"></option>
         </select>
     </div>
+
 
     <input type="submit" value="Let's Register!">
 

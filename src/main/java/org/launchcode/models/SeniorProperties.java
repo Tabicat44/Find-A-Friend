@@ -75,6 +75,7 @@ public class SeniorProperties {
 
     @NotBlank
     @Size(min=3, max=22)
+    @Transient
     private String verifyPassword;
 
     @NotNull
@@ -106,6 +107,8 @@ public class SeniorProperties {
 /*        pickedAnswer1 = thePickedAnswer1;
         pickedAnswer2 = thePickedAnswer2;*/
     }
+
+    //Getters and Setters
 
     public int getSeniorPropertiesId() { return seniorPropertiesId; }
 
@@ -149,6 +152,15 @@ public class SeniorProperties {
     public String getZipCode()  { return zipCode; }
 
     public void setZipCode(String providedZipCode) { zipCode = providedZipCode; }
+
+    public Inquiry1 getInquiry1() { return inquiry1; }
+
+    public void setInquiry1(Inquiry1 providedInquiry1) { inquiry1 = providedInquiry1; }
+
+    public Inquiry2 getInquiry2() { return inquiry2; }
+
+    public void setInquiry2(Inquiry2 inquiry2) { this.inquiry2 = inquiry2; }
+
 
 /*
     public void setVerifyPassword(String verifyPassword) {

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<!--<head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-</head>
-<body class="container">
+</head>-->
+<head th:replace="fragments :: head"></head>
+<body>
 
-<!--<header th:replace="fragments :: header"></header>-->
+<header th:replace="fragments :: header"></header>
 <!--<title th:replace="fragments :: title"></title>-->
 <title>Title</title>
 <nav>
@@ -16,12 +17,12 @@
 <h1 th:text="${title}">Default Title</h1>
 
 
-<p th:unless="${thoseTimeSlotsTho} and ${hoseTimeSlotsTho.size()}">No Available Time Slots</p>
+<p th:unless="${timeSlots} and ${timeSlots.size()}">No Available Time Slots</p>
 <!--<p th:unless="${timeSlots}}">No Available Time Slots</p>-->
 
 
 <nav th:fragments="navigation">
-    <a href="addTimeSlots">Add Time Slots</a>
+    <a id="bottomButton" href="addTimeSlots">Add Time Slots</a>
 </nav>
 
 <table class="table">
@@ -34,41 +35,6 @@
         <td th:text="${timeSlot.date}"></td>
         <td th:text="${timeSlot.time}"></td>
     </tr>
-
-
-
-<!--
-
-<body class="container">
-
-<h1 th:text="${title}">Default Title</h1>
-
-<nav th:replace="fragments :: navigation"></nav>
-
-<p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
-
-
-<table class="table">
-
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Category</th>
-        &lt;!&ndash;        <th>Type</th>&ndash;&gt;
-    </tr>
-
-    <tr th:each="cheese : ${cheeses}">
-        <td th:text="${cheese.name}"></td>
-        <td th:text="${cheese.description}"></td>
-        <td th:text="${cheese.category.name}"></td>
-        &lt;!&ndash;        <td th:text="${cheese.type.name}"></td>&ndash;&gt;
-    </tr>
-
-
-    <nav th:fragment="navigation">
-        <a href="/cheese/add">Add</a> |
-        <a href="/cheese/remove">Remove</a>
-    </nav>
-
-
-</table>-->
+</table>
+</body>
+</html>
