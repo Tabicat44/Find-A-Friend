@@ -14,9 +14,19 @@ nav {
 
 .table {
     border-collapse: collapse;
+    border-bottom: 1px solid #ddd;
     width: 100%;
+    line-height: 4
 }
 
+th {
+    height: 50px;
+}
+
+tr, td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
 
 #bottomButton{
     border-bottom: 6px solid purple;

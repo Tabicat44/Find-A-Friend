@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<!--<head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-</head>
-<body>
+</head>-->
+<head th:replace="fragments :: head"></head>
 
+<body>
+<header th:replace="fragments :: header"></header>
+<nav class="letsGetAligned">
+    <p><a href="hiThere">Home</a></p> |
+    <p><a href="register">I'm New</a></p> |
+    <p><a href="register/login">I've Been Here Before</a></p>
+</nav>
+
+<footer th:replace="fragments :: footer"></footer>
 </body>
 </html>

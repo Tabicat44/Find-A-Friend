@@ -50,6 +50,8 @@ public class SeniorProperties {
     private List<Inquiry2> inquiry2s = new ArrayList<>();*/
 
 
+    // Relationships with the "questions"; will set up the
+    // category/column in the table
     @ManyToOne
     private Inquiry1 inquiry1;
 
